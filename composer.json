@@ -12,7 +12,7 @@
         "rainlab/pages-plugin": "^2.2",
         "offline/oc-vite-plugin": "^2.1",
         "rainlab/builder-plugin": "^3.0",
-        "saadahsan/oc-callbackform-plugin": "dev-main"
+        "saadahsan/oc-formbuilder-plugin": "dev-main"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5|^9.0",

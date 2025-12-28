@@ -4,7 +4,7 @@ description = "Default layout"
 [staticMenu mainMenu]
 code = "main-menu"
 
-[callBackForm]
+[formBuilder]
 formCode = "callback"
 renderMode = "modal"
 modalId = "callbackModalNew"
@@ -254,7 +254,7 @@ modalId = "callbackModalNew"
         {% partial 'site/how-its-made' %}
 
         <!-- global callback form -->
-        {% component 'callBackForm' %}
+        {% component 'formBuilder' %}
 
         <!-- Scripts -->
         {% scripts %}
