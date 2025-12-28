@@ -1,0 +1,23 @@
+/**
+ * Saad Ahsan - Main Stylesheet
+ * Following Brand Guidelines: Modern Futuristic Design
+ *
+ * Built with Vite - run `npm run build` to compile
+ */
+
+/* Foundation */
+@import './_variables.css';
+@import './_base.css';
+@import './_typography.css';
+@import './_layout.css';
+
+/* UI Components */
+@import './components/_buttons.css';
+@import './components/_cards.css';
+@import './components/_animations.css';
+@import './components/_utilities.css';
+
+/* Navigation */
+@import './components/_header.css';
+@import './components/_top-header.css';
+@import './components/_mobile-nav.css';

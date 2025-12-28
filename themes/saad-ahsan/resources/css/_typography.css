@@ -1,0 +1,52 @@
+/**
+ * Typography
+ */
+
+/* Headings - Unna Font */
+h1, h2, h3, h4, h5, h6,
+.heading {
+    font-family: 'Unna', serif;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* Hero Title */
+.hero-title {
+    font-family: 'Unna', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+/* Section Title */
+.section-title {
+    font-family: 'Unna', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* Stat Numbers */
+.stat-number {
+    font-family: 'Roboto Slab', serif;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Navigation Links */
+.nav-link-style {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* Labels & Badges */
+.label,
+.section-label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}

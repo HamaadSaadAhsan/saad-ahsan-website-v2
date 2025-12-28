@@ -1,0 +1,116 @@
+##
+description = "Flash messages for form submissions and notifications"
+==
+{% flash %}
+    <div class="flash-message flash-{{ type }}" role="alert" aria-live="polite">
+        <div class="container">
+            <div class="flash-content">
+                <span class="flash-icon" aria-hidden="true">
+                    {% if type == 'success' %}
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    {% elseif type == 'error' %}
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" /></svg>
+                    {% elseif type == 'warning' %}
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+                    {% else %}
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" /></svg>
+                    {% endif %}
+                </span>
+                <p class="flash-text">{{ message }}</p>
+                <button type="button" class="flash-close" aria-label="Close" onclick="this.parentElement.parentElement.remove()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+{% endflash %}
+
+<style>
+.flash-message {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    padding: 1rem;
+    min-width: 300px;
+    max-width: 90vw;
+    animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.flash-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-radius: 0;
+    backdrop-filter: blur(10px);
+}
+
+.flash-success .flash-content {
+    background: rgba(16, 185, 129, 0.95);
+    border: 1px solid rgba(16, 185, 129, 0.5);
+    color: #fff;
+}
+
+.flash-error .flash-content {
+    background: rgba(239, 68, 68, 0.95);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    color: #fff;
+}
+
+.flash-warning .flash-content {
+    background: rgba(245, 158, 11, 0.95);
+    border: 1px solid rgba(245, 158, 11, 0.5);
+    color: #fff;
+}
+
+.flash-info .flash-content {
+    background: rgba(59, 130, 246, 0.95);
+    border: 1px solid rgba(59, 130, 246, 0.5);
+    color: #fff;
+}
+
+.flash-icon svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.flash-text {
+    flex: 1;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.flash-close {
+    background: transparent;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    color: currentColor;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.flash-close:hover {
+    opacity: 1;
+}
+
+.flash-close svg {
+    width: 20px;
+    height: 20px;
+}
+</style>

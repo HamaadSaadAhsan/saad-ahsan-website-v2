@@ -1,0 +1,8 @@
+{
+    "name": "hk-6441/sarc-theme",
+    "type": "october-theme",
+    "description": "Saad Ahsan",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

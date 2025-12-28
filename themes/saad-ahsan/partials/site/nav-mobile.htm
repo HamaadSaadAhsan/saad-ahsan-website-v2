@@ -1,0 +1,157 @@
+##
+description = "Mobile navigation menu with futuristic design"
+==
+{# Mobile Navigation Overlay #}
+<div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true"></div>
+
+{# Mobile Navigation Panel #}
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+    {# Mobile Nav Header #}
+    <div class="mobile-nav-header">
+        <a class="mobile-nav-logo" href="/">
+            <img src="{{ 'assets/images/logo-small.svg'|theme }}" alt="Saad Ahsan" width="140" height="32" />
+        </a>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M18 6L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 6L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+
+    {# Mobile Nav Links #}
+    <div class="mobile-nav-content">
+        <div class="mobile-nav-links">
+            {% for item in mainMenu.menuItems %}
+                {% if item.items %}
+                    {# Parent item with children #}
+                    <div class="mobile-nav-group {{ item.isActive or item.isChildActive ? 'active' : '' }}">
+                        <div class="mobile-nav-parent">
+                            <a class="mobile-nav-link {{ item.isActive or item.isChildActive ? 'active' : '' }}"
+                               href="{{ item.url }}"
+                               {% if item.viewBag.isExternal %}target="_blank" rel="noopener"{% endif %}>
+                                {{ item.title }}
+                            </a>
+                            <button class="mobile-nav-toggle" aria-expanded="false" aria-label="Toggle submenu">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path class="toggle-vertical" d="M6 2V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M2 6H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="mobile-nav-submenu">
+                            {% for child in item.items %}
+                                <a class="mobile-nav-link mobile-nav-link-child {{ child.isActive ? 'active' : '' }}"
+                                   href="{{ child.url }}"
+                                   {% if child.viewBag.isExternal %}target="_blank" rel="noopener"{% endif %}>
+                                    <span class="mobile-nav-child-indicator"></span>
+                                    {{ child.title }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% else %}
+                    {# Simple nav item without children #}
+                    <a class="mobile-nav-link {{ item.isActive or item.isChildActive ? 'active' : '' }}"
+                       href="{{ item.url }}"
+                       {% if item.viewBag.isExternal %}target="_blank" rel="noopener"{% endif %}>
+                        {{ item.title }}
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="mobile-nav-footer">
+            <a href="#callback" class="mobile-cta" data-bs-toggle="modal" data-bs-target="#callbackModalNew">
+                Book Consultation
+            </a>
+
+            <div class="mobile-cta-links">
+                <a href="tel:+1234567890" class="mobile-cta-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                    </svg>
+                    <span>Call Us</span>
+                </a>
+                <a href="https://wa.me/1234567890" class="mobile-cta-link" target="_blank" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+                    </svg>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+(function() {
+    var menuToggle = document.querySelector('.menu-toggle');
+    var mobileNav = document.getElementById('mobileNav');
+    var mobileNavOverlay = document.getElementById('mobileNavOverlay');
+    var mobileNavClose = document.getElementById('mobileNavClose');
+
+    if (!menuToggle || !mobileNav || !mobileNavOverlay) return;
+
+    function openMenu() {
+        menuToggle.classList.add('active');
+        mobileNav.classList.add('active');
+        mobileNavOverlay.classList.add('active');
+        mobileNav.setAttribute('aria-hidden', 'false');
+        mobileNavOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        menuToggle.classList.remove('active');
+        mobileNav.classList.remove('active');
+        mobileNavOverlay.classList.remove('active');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        mobileNavOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    function toggleMenu() {
+        if (mobileNav.classList.contains('active')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    mobileNavOverlay.addEventListener('click', closeMenu);
+    if (mobileNavClose) {
+        mobileNavClose.addEventListener('click', closeMenu);
+    }
+
+    // Submenu toggles
+    var submenuToggles = mobileNav.querySelectorAll('.mobile-nav-toggle');
+    submenuToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            var group = this.closest('.mobile-nav-group');
+            var isExpanded = group.classList.contains('expanded');
+
+            // Close other open submenus
+            mobileNav.querySelectorAll('.mobile-nav-group.expanded').forEach(function(openGroup) {
+                if (openGroup !== group) {
+                    openGroup.classList.remove('expanded');
+                    openGroup.querySelector('.mobile-nav-toggle').setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Toggle current submenu
+            group.classList.toggle('expanded');
+            this.setAttribute('aria-expanded', !isExpanded);
+        });
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+})();
+</script>

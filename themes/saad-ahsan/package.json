@@ -1,0 +1,17 @@
+{
+    "name": "saad-ahsan-theme",
+    "version": "1.0.0",
+    "description": "Saad Ahsan OctoberCMS Theme",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "cssnano": "^7.1.2",
+        "postcss": "^8.5.6",
+        "vite": "^5.0.0"
+    }
+}

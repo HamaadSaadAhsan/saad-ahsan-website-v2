@@ -1,0 +1,27 @@
+/**
+ * CSS Custom Properties (Brand Colors)
+ */
+:root {
+    /* Primary Colors */
+    --primary: #800020;
+    --primary-dark: #5a0016;
+    --primary-light: #a30029;
+
+    /* Accent Colors */
+    --gold: #C4A962;
+    --gold-light: #d4be7a;
+    --gold-dark: #9a8347;
+
+    /* Neutral Colors */
+    --cream: #FAF7F0;
+    --dark: #0a0a0a;
+    --dark-light: #1a1a1a;
+    --gray: #6A6760;
+    --gray-light: #9a9a9a;
+    --white: #ffffff;
+
+    /* Glass Morphism */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --shadow-glow: 0 0 40px rgba(196, 169, 98, 0.15);
+}

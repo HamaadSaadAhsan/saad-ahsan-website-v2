@@ -1,0 +1,21 @@
+##
+description = "Optimized resource loading - fonts preload with swap, critical CSS"
+==
+{# Preconnect to external origins for faster font loading #}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+{# Preload critical fonts with font-display swap for optimal LCP #}
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Unna:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unna:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"></noscript>
+
+{# DNS prefetch for third-party resources #}
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+{# Main stylesheet via Vite - bundled for optimal performance #}
+{{ vite(['resources/css/main.css']) }}
+
+{% styles %}
+
+{# Page-specific styles from {% put styles %} #}
+{% placeholder styles %}

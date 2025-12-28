@@ -1,0 +1,85 @@
+items:
+    -
+        title: Citizenship
+        type: url
+        url: /citizenship-by-investment
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: 'Antigua & Barbuda'
+                type: url
+                url: /citizenship-by-investment-programs/antigua-and-barbuda
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: Residency
+        type: url
+        url: /residency-by-investment-programs
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: 'Portugal Golden Visa'
+                type: url
+                url: /residency-by-investment-programs/portugal-golden-visa
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: Skilled
+        type: url
+        url: /skilled-immigration
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Immigration Services'
+        type: url
+        url: /immigration-services
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Blog
+        type: url
+        url: /blog
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: About
+        type: url
+        url: /about-us
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Media
+        type: url
+        url: /media
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: 'Main menu'

@@ -1,0 +1,36 @@
+##
+description = "Desktop navigation links using StaticMenu component"
+==
+{% for item in mainMenu.menuItems %}
+    <li class="nav-item {{ item.items ? 'has-dropdown' : '' }}">
+        <a class="nav-link {{ item.isActive or item.isChildActive ? 'active' : '' }}"
+           href="{{ item.url }}"
+           {% if item.isActive %}aria-current="page"{% endif %}
+           {% if item.viewBag.isExternal %}target="_blank" rel="noopener"{% endif %}
+           {% if item.items %}aria-haspopup="true" aria-expanded="false"{% endif %}>
+            {{ item.title }}
+            {% if item.items %}
+            <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            {% endif %}
+        </a>
+
+        {# Dropdown for nested items #}
+        {% if item.items %}
+        <ul class="dropdown-menu" role="menu">
+            {% for child in item.items %}
+            <li role="none">
+                <a class="dropdown-item {{ child.isActive ? 'active' : '' }}"
+                   href="{{ child.url }}"
+                   role="menuitem"
+                   {% if child.viewBag.isExternal %}target="_blank" rel="noopener"{% endif %}>
+                    <span class="dropdown-item-text">{{ child.title }}</span>
+                    <span class="dropdown-item-line"></span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </li>
+{% endfor %}

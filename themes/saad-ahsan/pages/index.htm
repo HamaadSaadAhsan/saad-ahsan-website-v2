@@ -1,0 +1,1564 @@
+url = "/"
+layout = "default"
+title = "Residency & Citizenship by Investment Consultant"
+description = "Improve travel mobility with Saad Ahsan Residency and Citizenship by Investment. Get free consultation for second passport, EU residency & Skilled Immigration."
+meta_title = "Residency & Citizenship by Investment Consultant"
+meta_description = "Improve travel mobility with Saad Ahsan Residency and Citizenship by Investment. Get free consultation for second passport, EU residency & Skilled Immigration."
+
+[sitePicker]
+
+==
+{% put meta %}
+<link rel="canonical" href="https://saadahsan.com/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Saad Ahsan"/>
+<meta property="og:url" content="https://saadahsan.com/"/>
+<meta property="og:title" content="Residency & Citizenship by Investment Consultant"/>
+<meta property="og:description"
+      content="Improve travel mobility with Saad Ahsan Residency and Citizenship by Investment. Get free consultation for second passport, EU residency & Skilled Immigration."/>
+<meta property="og:image" content="https://saadahsan.com/themes/saad-ahsan/assets/images/favicon.webp"/>
+{% endput %}
+
+{% put styles %}
+<style>
+    :root {
+        --primary: #800020;
+        --primary-dark: #5a0016;
+        --primary-light: #a30029;
+        --gold: #C4A962;
+        --gold-light: #d4be7a;
+        --gold-dark: #9a8347;
+        --cream: #FAF7F0;
+        --dark: #0a0a0a;
+        --dark-light: #1a1a1a;
+        --gray: #6A6760;
+        --gray-light: #9a9a9a;
+        --white: #ffffff;
+        --glass-bg: rgba(255, 255, 255, 0.05);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --shadow-glow: 0 0 40px rgba(196, 169, 98, 0.15);
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .hero {
+        position: relative;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        background: var(--dark);
+        overflow: hidden;
+    }
+
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        background: url('{{ 'assets/images/homepage/header_412.avif'|theme }}') center/cover no-repeat;
+        opacity: 0.4;
+    }
+
+    @media (min-width: 768px) {
+        .hero-bg {
+            background-image: url('{{ 'assets/images/homepage/header_1024.avif'|theme }}');
+        }
+    }
+
+    @media (min-width: 1440px) {
+        .hero-bg {
+            background-image: url('{{ 'assets/images/homepage/header_1920.avif'|theme }}');
+        }
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(128, 0, 32, 0.85) 0%, rgba(10, 10, 10, 0.95) 100%);
+    }
+
+    /* Animated geometric shapes */
+    .hero-shapes {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .shape {
+        position: absolute;
+        border: 1px solid rgba(196, 169, 98, 0.2);
+        animation: float 20s ease-in-out infinite;
+    }
+
+    .shape-1 {
+        width: 400px;
+        height: 400px;
+        top: -100px;
+        right: -100px;
+        border-radius: 50%;
+        animation-delay: 0s;
+    }
+
+    .shape-2 {
+        width: 200px;
+        height: 200px;
+        bottom: 20%;
+        left: 5%;
+        transform: rotate(45deg);
+        animation-delay: -5s;
+    }
+
+    .shape-3 {
+        width: 150px;
+        height: 150px;
+        top: 30%;
+        right: 10%;
+        border-radius: 50%;
+        animation-delay: -10s;
+    }
+
+    .shape-4 {
+        width: 80px;
+        height: 80px;
+        bottom: 30%;
+        right: 20%;
+        transform: rotate(45deg);
+        animation-delay: -15s;
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0.3;
+        }
+        50% {
+            transform: translateY(-30px) rotate(5deg);
+            opacity: 0.6;
+        }
+    }
+
+    /* Vertical line accents */
+    .hero-lines {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 10%;
+        display: flex;
+        gap: 30vw;
+        pointer-events: none;
+    }
+
+    .hero-line {
+        width: 1px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent 0%, rgba(196, 169, 98, 0.08) 50%, transparent 100%);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 8rem 2rem 4rem;
+        width: 100%;
+    }
+
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1.5rem;
+        background: rgba(196, 169, 98, 0.1);
+        border: 1px solid rgba(196, 169, 98, 0.3);
+        color: var(--gold);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+    }
+
+    .hero-badge-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        border-radius: 50%;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.5; transform: scale(1.5); }
+    }
+
+    .hero-title {
+        font-family: 'Unna', serif;
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 400;
+        color: var(--white);
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        max-width: 900px;
+    }
+
+    .hero-title span {
+        display: inline;
+        background: linear-gradient(90deg, var(--gold-light), var(--gold));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.8;
+        max-width: 600px;
+        margin-bottom: 3rem;
+        font-weight: 300;
+    }
+
+    /* Stats Grid */
+    .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 700px;
+        margin-bottom: 3rem;
+    }
+
+    @media (min-width: 768px) {
+        .hero-stats {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .stat {
+        position: relative;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .stat:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(196, 169, 98, 0.3);
+        transform: translateY(-5px);
+    }
+
+    .stat-number {
+        font-family: 'Roboto Slab', serif;
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+        font-weight: 700;
+        color: var(--gold);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.6875rem;
+        color: rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+    }
+
+    /* Hero CTA Buttons */
+    .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .btn-primary {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.25rem 2.5rem;
+        background: var(--gold);
+        color: var(--dark);
+        text-decoration: none;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: all 0.4s ease;
+    }
+
+    .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(196, 169, 98, 0.4);
+    }
+
+    .btn-primary:hover::before {
+        left: 100%;
+    }
+
+    .btn-primary-arrow {
+        width: 20px;
+        height: 1px;
+        background: var(--dark);
+        position: relative;
+        transition: width 0.3s ease;
+    }
+
+    .btn-primary-arrow::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: -4px;
+        width: 8px;
+        height: 8px;
+        border-top: 1px solid var(--dark);
+        border-right: 1px solid var(--dark);
+        transform: rotate(45deg);
+    }
+
+    .btn-primary:hover .btn-primary-arrow {
+        width: 30px;
+    }
+
+    .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1.25rem 2.5rem;
+        background: transparent;
+        color: var(--white);
+        text-decoration: none;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.4s ease;
+    }
+
+    .btn-secondary:hover {
+        border-color: var(--white);
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-3px);
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    @media (min-width: 576px) {
+        .section {
+            padding: 4rem 0;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .section {
+            padding: 5rem 0;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .section {
+            padding: 6rem 0;
+        }
+    }
+
+    .section-dark {
+        background: var(--dark);
+        color: var(--white);
+    }
+
+    .section-cream {
+        background: var(--cream);
+    }
+
+    .section-white {
+        background: var(--white);
+    }
+
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        width: 100%;
+    }
+
+    @media (min-width: 576px) {
+        .container {
+            padding: 0 1.5rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+            padding: 0 2rem;
+        }
+    }
+
+    /* Prevent horizontal overflow globally */
+    body {
+        overflow-x: hidden;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .section-header {
+            margin-bottom: 3rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .section-header {
+            margin-bottom: 4rem;
+        }
+    }
+
+    .section-label {
+        display: inline-block;
+        font-size: 0.625rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.75rem;
+        position: relative;
+        padding-left: 2.5rem;
+    }
+
+    @media (min-width: 576px) {
+        .section-label {
+            font-size: 0.6875rem;
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            padding-left: 3rem;
+        }
+    }
+
+    .section-label::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 1.5rem;
+        height: 1px;
+        background: var(--gold);
+    }
+
+    @media (min-width: 576px) {
+        .section-label::before {
+            width: 2rem;
+        }
+    }
+
+    /* Centered section header */
+    .section-header-center {
+        text-align: center;
+    }
+
+    .section-header-center .section-label {
+        padding-left: 0;
+    }
+
+    .section-header-center .section-label::before {
+        display: none;
+    }
+
+    .section-header-center .section-title {
+        text-align: center !important;
+        width: 100%;
+        max-width: 100% !important;
+    }
+
+    .section-header-center .section-subtitle {
+        text-align: center !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section-title {
+        font-family: 'Unna', serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 400;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    .section-title-dark {
+        color: var(--dark);
+    }
+
+    .section-title-light {
+        color: var(--white);
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        line-height: 1.8;
+        max-width: 600px;
+    }
+
+    .section-subtitle-dark {
+        color: var(--gray);
+    }
+
+    .section-subtitle-light {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .section-cream {
+        overflow-x: hidden;
+    }
+
+    .value-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        overflow: hidden;
+    }
+
+    .value-content {
+        order: 1;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .value-image {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .value-content p {
+        color: var(--gray);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    .value-features {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .value-feature {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .value-feature-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(128, 0, 32, 0.1);
+        color: var(--primary);
+        flex-shrink: 0;
+    }
+
+    .value-feature-text {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--dark);
+    }
+
+    .value-image img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    .value-image::before,
+    .value-image::after {
+        display: none;
+    }
+
+    /* Tablet and up */
+    @media (min-width: 576px) {
+        .value-features {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .value-feature-icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+        }
+    }
+
+    /* Desktop */
+    @media (min-width: 1024px) {
+        .value-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            overflow: visible;
+            padding: 30px 0;
+        }
+
+        .value-content,
+        .value-image {
+            order: unset;
+        }
+
+        .value-content p {
+            font-size: 1.0625rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .value-features {
+            margin-top: 2.5rem;
+            gap: 1.5rem;
+        }
+
+        .value-image {
+            position: relative;
+            overflow: visible;
+        }
+
+        .value-image img {
+            position: relative;
+            z-index: 1;
+        }
+
+        .value-image::before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: 0;
+            width: calc(100% - 20px);
+            height: 100%;
+            border: 1px solid var(--gold);
+            z-index: 0;
+        }
+
+        .value-image::after {
+            display: block;
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            background: var(--primary);
+            opacity: 0.1;
+            z-index: 0;
+        }
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    @media (min-width: 480px) {
+        .services-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 992px) {
+        .services-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .service-card {
+        position: relative;
+        padding: 2rem 1.5rem;
+        background: var(--white);
+        text-decoration: none;
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: all 0.4s ease;
+        overflow: hidden;
+    }
+
+    .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), var(--gold));
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+    }
+
+    .service-card:hover {
+        border-color: rgba(128, 0, 32, 0.2);
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(128, 0, 32, 0.08);
+        color: var(--primary);
+        transition: all 0.3s ease;
+    }
+
+    .service-card:hover .service-icon {
+        background: var(--primary);
+        color: var(--white);
+    }
+
+    .service-title {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--dark);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    .programs-header {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .programs-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--gold);
+        text-decoration: none;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+    }
+
+    .programs-link:hover {
+        gap: 1rem;
+    }
+
+    .programs-link svg {
+        transition: transform 0.3s ease;
+    }
+
+    .programs-link:hover svg {
+        transform: translateX(5px);
+    }
+
+    @media (min-width: 576px) {
+        .programs-header {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3rem;
+        }
+
+        .programs-link {
+            font-size: 0.8125rem;
+        }
+    }
+
+    .programs-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    @media (min-width: 576px) {
+        .programs-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .programs-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+    }
+
+    .program-card {
+        position: relative;
+        padding: 1.5rem;
+        background: var(--white);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+    }
+
+    @media (min-width: 576px) {
+        .program-card {
+            padding: 2rem;
+        }
+    }
+
+    .section-dark .program-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .program-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(128, 0, 32, 0.05) 0%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .program-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        border-color: rgba(196, 169, 98, 0.3);
+    }
+
+    .section-dark .program-card:hover {
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: var(--shadow-glow);
+    }
+
+    .program-card:hover::before {
+        opacity: 1;
+    }
+
+    .program-flag {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 1.25rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .program-name {
+        font-family: 'Unna', serif;
+        font-size: 1.375rem;
+        font-weight: 400;
+        color: var(--dark);
+        margin-bottom: 1rem;
+    }
+
+    .section-dark .program-name {
+        color: var(--white);
+    }
+
+    .program-desc {
+        font-size: 0.9375rem;
+        color: var(--gray);
+        line-height: 1.7;
+        margin-bottom: 1.25rem;
+    }
+
+    .section-dark .program-desc {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .program-highlight {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--gold);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    .program-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--primary);
+        text-decoration: none;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        margin-top: auto;
+        padding-top: 1rem;
+    }
+
+    .section-dark .program-link {
+        color: var(--gold);
+    }
+
+    .program-link:hover {
+        gap: 1rem;
+    }
+
+    .cta-section {
+        position: relative;
+        padding: clamp(4rem, 10vw, 6rem) 2rem;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        overflow: hidden;
+    }
+
+    .cta-shapes {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+    }
+
+    .cta-shape {
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+    }
+
+    .cta-shape-1 {
+        width: 400px;
+        height: 400px;
+        top: -200px;
+        right: -100px;
+    }
+
+    .cta-shape-2 {
+        width: 300px;
+        height: 300px;
+        bottom: -150px;
+        left: -100px;
+    }
+
+    .cta-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .cta-title {
+        font-family: 'Unna', serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 400;
+        color: var(--white);
+        margin-bottom: 1rem;
+    }
+
+    .cta-subtitle {
+        font-size: 1.0625rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.25rem 3rem;
+        background: var(--white);
+        color: var(--primary);
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        transition: all 0.4s ease;
+    }
+
+    .cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        .hero-content {
+            padding-top: 7rem;
+        }
+
+        .value-features {
+            grid-template-columns: 1fr;
+        }
+
+        .value-image::before,
+        .value-image::after {
+            display: none;
+        }
+    }
+
+    .fade-up {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .programs-grid .fade-up:nth-child(2) { transition-delay: 0.1s; }
+    .programs-grid .fade-up:nth-child(3) { transition-delay: 0.2s; }
+    .programs-grid .fade-up:nth-child(4) { transition-delay: 0.3s; }
+    .programs-grid .fade-up:nth-child(5) { transition-delay: 0.4s; }
+    .programs-grid .fade-up:nth-child(6) { transition-delay: 0.5s; }
+
+    .services-grid .fade-up:nth-child(2) { transition-delay: 0.1s; }
+    .services-grid .fade-up:nth-child(3) { transition-delay: 0.2s; }
+    .services-grid .fade-up:nth-child(4) { transition-delay: 0.3s; }
+
+    @media (prefers-reduced-motion: reduce) {
+        .fade-up {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+    }
+
+    /* Adjust hero padding for top header */
+    .hero-content {
+        padding-top: 8rem;
+    }
+
+    @media (max-width: 1023px) {
+        .hero-content {
+            padding-top: calc(7rem + 40px);
+        }
+    }
+
+    @media (max-width: 639px) {
+        .hero-content {
+            padding-top: calc(6rem + 38px);
+        }
+    }
+</style>
+{% endput %}
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <!-- Geometric Shapes -->
+    <div class="hero-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+    <!-- Vertical Lines -->
+    <div class="hero-lines">
+        <div class="hero-line"></div>
+        <div class="hero-line"></div>
+        <div class="hero-line"></div>
+    </div>
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Licensed & Authorized Consultants
+        </div>
+
+        <h1 class="hero-title">
+            Empowering <span>Global Mobility</span> and Business Expansion
+        </h1>
+
+        <p class="hero-subtitle">
+            Transform your global mobility dreams into reality through residency and citizenship by investment programs across 15+ countries.
+        </p>
+
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Years Excellence</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">12,000+</div>
+                <div class="stat-label">Successful Clients</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Investment Programs</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Global Offices</div>
+            </div>
+        </div>
+
+        <div class="hero-cta">
+            <a href="/contact-us" class="btn-primary">
+                Free Consultation
+                <span class="btn-primary-arrow"></span>
+            </a>
+            <a href="/about-us" class="btn-secondary">
+                Learn More
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     VALUE PROPOSITION SECTION
+     ============================================ -->
+<section class="section section-cream">
+    <div class="container">
+        <div class="value-grid">
+            <div class="value-content fade-up">
+                <span class="section-label">Who We Are</span>
+                <h2 class="section-title section-title-dark">Global Investment for Travel Mobility and Business Expansion</h2>
+
+                <p>In today's global geopolitical dynamics, the ability to travel without visa restrictions means access to quality lifestyle, global markets, and a Plan B to safeguard yourself and family members.</p>
+
+                <p>At Saad Ahsan Residency & Citizenship, we take pride in transforming your global mobility dreams into reality through investment opportunities in countries offering residency or citizenship programs.</p>
+
+                <div class="value-features">
+                    <div class="value-feature">
+                        <div class="value-feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <span class="value-feature-text">Licensed Consultants</span>
+                    </div>
+                    <div class="value-feature">
+                        <div class="value-feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <span class="value-feature-text">Global Network</span>
+                    </div>
+                    <div class="value-feature">
+                        <div class="value-feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                        </div>
+                        <span class="value-feature-text">Secure Process</span>
+                    </div>
+                    <div class="value-feature">
+                        <div class="value-feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <span class="value-feature-text">Family Inclusion</span>
+                    </div>
+                </div>
+
+                <a href="/about-us" class="btn-primary" style="margin-top: 2.5rem;">
+                    Learn More
+                    <span class="btn-primary-arrow"></span>
+                </a>
+            </div>
+
+            <div class="value-image fade-up">
+                <img loading="lazy" src="{{ 'assets/images/global-passports.webp'|theme }}" alt="Citizenship by Investment">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     SERVICES SECTION
+     ============================================ -->
+<section class="section section-white">
+    <div class="container">
+        <div class="section-header section-header-center">
+            <span class="section-label">Our Services</span>
+            <h2 class="section-title section-title-dark">Immigration & Naturalization Services</h2>
+            <p class="section-subtitle section-subtitle-dark">
+                Combining 20 years of experience in immigration & naturalization services across different countries
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <a href="/citizenship-by-investment-programs" class="service-card fade-up">
+                <div class="service-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="16" rx="2"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                </div>
+                <span class="service-title">Citizenship</span>
+            </a>
+
+            <a href="/residency-by-investment-programs" class="service-card fade-up">
+                <div class="service-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <span class="service-title">Residency</span>
+            </a>
+
+            <a href="/skilled-immigration" class="service-card fade-up">
+                <div class="service-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="8.5" cy="7" r="4"/>
+                        <polyline points="17 11 19 13 23 9"/>
+                    </svg>
+                </div>
+                <span class="service-title">Skilled Immigration</span>
+            </a>
+
+            <a href="/business-formation" class="service-card fade-up">
+                <div class="service-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    </svg>
+                </div>
+                <span class="service-title">Business Formation</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     CITIZENSHIP PROGRAMS SECTION
+     ============================================ -->
+<section class="section section-cream">
+    <div class="container">
+        <div class="programs-header">
+            <div>
+                <span class="section-label">Investment Programs</span>
+                <h2 class="section-title section-title-dark">Best Citizenship by Investment</h2>
+            </div>
+            <a href="/citizenship-by-investment-programs" class="programs-link">
+                View All Programs
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="programs-grid">
+            <a href="/citizenship-by-investment-programs/antigua-and-barbuda" class="program-card fade-up">
+                <img loading="lazy" src="{{ 'assets/images/services-cards/Antigua-Barbuda.png'|theme }}" alt="Antigua and Barbuda" class="program-flag" width="50" height="50">
+                <h3 class="program-name">Antigua and Barbuda</h3>
+                <p class="program-desc">Citizenship for family of 4 with $230,000 contribution. Options include Donation, Real Estate and Business Investment.</p>
+                <span class="program-highlight">150+ Visa Free Countries</span>
+                <span class="program-link">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </span>
+            </a>
+
+            <a href="/citizenship-by-investment-programs/dominica" class="program-card fade-up">
+                <img loading="lazy" src="{{ 'assets/images/services-cards/Dominica.png'|theme }}" alt="Dominica" class="program-flag" width="50" height="50">
+                <h3 class="program-name">Dominica</h3>
+                <p class="program-desc">Citizenship by investment requires $200,000 via donation and real estate investment.</p>
+                <span class="program-highlight">145+ Visa Free Countries</span>
+                <span class="program-link">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </span>
+            </a>
+
+            <a href="/citizenship-by-investment-programs/grenada" class="program-card fade-up">
+                <img loading="lazy" src="{{ 'assets/images/services-cards/Grenada.png'|theme }}" alt="Grenada" class="program-flag" width="50" height="50">
+                <h3 class="program-name">Grenada</h3>
+                <p class="program-desc">Citizenship starts with $235,000 by donation and $270,000 by real estate investment.</p>
+                <span class="program-highlight">145+ Visa Free Countries</span>
+                <span class="program-link">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </span>
+            </a>
+
+            <a href="/citizenship-by-investment-programs/st-lucia" class="program-card fade-up">
+                <img loading="lazy" src="{{ 'assets/images/services-cards/Saint-Lucia.png'|theme }}" alt="St. Lucia" class="program-flag" width="50" height="50">
+                <h3 class="program-name">St. Lucia</h3>
+                <p class="program-desc">Citizenship starts with $240,000 contribution to National Economic Fund or $300,000 for real estate.</p>
+                <span class="program-highlight">145+ Visa Free Countries</span>
+                <span class="program-link">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </span>
+            </a>
+
+            <a href="/citizenship-by-investment-programs/st-kitts-and-nevis" class="program-card fade-up">
+                <img loading="lazy" src="{{ 'assets/images/services-cards/Saint-Kitts-And-Nevis.png'|theme }}" alt="St. Kitts and Nevis" class="program-flag" width="50" height="50">
+                <h3 class="program-name">St. Kitts and Nevis</h3>
+                <p class="program-desc">Citizenship requires $250,000 for contribution to economy and $325,000 for real estate investment.</p>
+                <span class="program-highlight">155+ Visa Free Countries</span>
+                <span class="program-link">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </span>
+            </a>
+
+            <a href="/citizenship-by-investment-programs/nauru" class="program-card fade-up">
+                <img loading="lazy" src="{{ 'assets/images/services-cards/Nauru.png'|theme }}" alt="Nauru" class="program-flag" width="50" height="50">
+                <h3 class="program-name">Nauru</h3>
+                <p class="program-desc">Citizenship starts from $105,000 and offers visa free travel to UK and UAE.</p>
+                <span class="program-highlight">88+ Visa Free Countries</span>
+                <span class="program-link">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     RESIDENCY PROGRAMS SECTION
+     ============================================ -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="programs-header">
+            <div>
+                <span class="section-label">Golden Visas</span>
+                <h2 class="section-title section-title-light">Best Residency by Investment</h2>
+            </div>
+            <a href="/residency-by-investment-programs" class="programs-link">
+                View All Programs
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="programs-grid">
+            <a href="/residency-by-investment-programs/portugal-golden-visa" class="program-card fade-up">
+                <img loading="lazy" src="{{ 'assets/images/services-cards/Portugal.png'|theme }}" alt="Portugal Golden Visa" class="program-flag" width="50" height="50">
+                <h3 class="program-name">Portugal Golden Visa</h3>
+                <p class="program-desc">Starts from €250K and offers 5 years residency leading to citizenship.</p>
+                <span class="program-highlight">EU Schengen Access</span>
+                <span class="program-link">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </span>
+            </a>
+
+            <a href="/residency-by-investment-programs/greece-golden-visa" class="program-card fade-up">
+                <img loading="lazy" src="{{ 'assets/images/services-cards/Greece.png'|theme }}" alt="Greece Golden Visa" class="program-flag" width="50" height="50">
+                <h3 class="program-name">Greece Golden Visa</h3>
+                <p class="program-desc">Starts from €250K and offers 5 years residency with possibilities of citizenship.</p>
+                <span class="program-highlight">EU Schengen Access</span>
+                <span class="program-link">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </span>
+            </a>
+
+            <a href="/residency-by-investment-programs/hungary-golden-visa" class="program-card fade-up">
+                <img loading="lazy" src="{{ 'assets/images/services-cards/Hungary.png'|theme }}" alt="Hungary Golden Visa" class="program-flag" width="50" height="50">
+                <h3 class="program-name">Hungary Golden Visa</h3>
+                <p class="program-desc">10 years residency by investment program starting from €250K.</p>
+                <span class="program-highlight">EU Schengen Access</span>
+                <span class="program-link">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </span>
+            </a>
+
+            <a href="/residency-by-investment-programs/uae-golden-visa" class="program-card fade-up">
+                <img loading="lazy" src="{{ 'assets/images/services-cards/UAE.png'|theme }}" alt="UAE Golden Visa" class="program-flag" width="50" height="50">
+                <h3 class="program-name">UAE Golden Visa</h3>
+                <p class="program-desc">Unique Gulf option starting from 2M AED investment in real estate or other sectors.</p>
+                <span class="program-highlight">10 Year Residency</span>
+                <span class="program-link">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </span>
+            </a>
+
+            <a href="/residency-by-investment-programs/latvia-golden-visa" class="program-card fade-up">
+                <img loading="lazy" src="{{ 'assets/images/services-cards/Latvia.png'|theme }}" alt="Latvia Golden Visa" class="program-flag" width="50" height="50">
+                <h3 class="program-name">Latvia Golden Visa</h3>
+                <p class="program-desc">Residency by investment starting from €50K with pathway to EU citizenship.</p>
+                <span class="program-highlight">EU Schengen Access</span>
+                <span class="program-link">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </span>
+            </a>
+
+            <a href="/residency-by-investment-programs/malta-golden-visa" class="program-card fade-up">
+                <img loading="lazy" src="{{ 'assets/images/services-cards/Malta.png'|theme }}" alt="Malta Golden Visa" class="program-flag" width="50" height="50">
+                <h3 class="program-name">Malta Golden Visa</h3>
+                <p class="program-desc">Permanent residency program with investment options starting from €150K.</p>
+                <span class="program-highlight">EU Schengen Access</span>
+                <span class="program-link">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     CTA SECTION
+     ============================================ -->
+<section class="cta-section">
+    <div class="cta-shapes">
+        <div class="cta-shape cta-shape-1"></div>
+        <div class="cta-shape cta-shape-2"></div>
+    </div>
+
+    <div class="cta-inner">
+        <h2 class="cta-title">Ready to Transform Your Global Mobility?</h2>
+        <p class="cta-subtitle">Get expert and personalized immigration by investment advice for you and your family. Start your journey today.</p>
+        <a href="/contact-us" class="cta-btn">
+            Contact Us Today
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+            </svg>
+        </a>
+    </div>
+</section>
+
+{% put scripts %}
+<script>
+(function() {
+
+    // Fade-up animations - Pure JS
+    function handleFadeUp() {
+        var elements = document.getElementsByClassName('fade-up');
+        var windowHeight = window.innerHeight;
+
+        for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            var position = element.getBoundingClientRect().top;
+
+            if (position < windowHeight - 50) {
+                element.classList.add('visible');
+            }
+        }
+    }
+
+    window.addEventListener('scroll', handleFadeUp);
+    window.addEventListener('load', handleFadeUp);
+    handleFadeUp();
+
+    // Smooth stat number animation on scroll
+    const stats = document.querySelectorAll('.stat-number');
+    let statsAnimated = false;
+
+    function animateStats() {
+        if (statsAnimated) return;
+
+        const firstStat = stats[0];
+        if (!firstStat) return;
+
+        const rect = firstStat.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8) {
+            statsAnimated = true;
+            stats.forEach(stat => {
+                const text = stat.textContent;
+                const num = parseInt(text.replace(/[^0-9]/g, ''));
+                const suffix = text.replace(/[0-9]/g, '');
+
+                let current = 0;
+                const increment = num / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= num) {
+                        stat.textContent = text;
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.floor(current) + suffix;
+                    }
+                }, 30);
+            });
+        }
+    }
+
+    window.addEventListener('scroll', animateStats);
+    animateStats(); // Check on load too
+})();
+</script>
+{% endput %}
