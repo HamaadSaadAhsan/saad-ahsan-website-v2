@@ -17,7 +17,7 @@ sftp-config.json
 .vscode/
 selenium.php
 composer.lock
-package-lock.json
+# package-lock.json
 /node_modules
 /themes/*/node_modules
 /plugins
